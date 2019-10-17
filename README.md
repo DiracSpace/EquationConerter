@@ -13,19 +13,18 @@ Infix to Prefix: /7*64+21
 Código intermedio triplos: 
 
 Operadores:
-Operador
-Ubicacion
-/		1
-*		3
--		5
-+		7
+Operador Ubicacion
+- '/'		'1'
+- '*'		'3'
+- '-'		'5'
+- '+'		'7'
 
 Operadores organizados:
 Operador	Ubicacion
-/		1
-*		3
--		5
-+		7
+- '/'		'1'
+- '*'		'3'
+- '-'		'5'
+- '+'	 '7'
 
 Código intermedio Triplos
 
