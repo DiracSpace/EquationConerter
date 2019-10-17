@@ -4,13 +4,12 @@ Give an infix expression and convert to postfix and prefix. Plus, I want to add 
 # Demostration
 
 ---Don't add parenthesis or letters---
-Input infix equation: 
+- Input infix equation: 
 -> 7/6*4-2+1
  
 - Polish Notation: 76/4*2-1+
 - Infix to Postfix: 76/4*2-1+
-- Infix to Prefix: /7*64+21
-- Código intermedio triplos: 
+- Infix to Prefix: /7*64+21 
 
 Operadores:
 Operador Ubicacion
