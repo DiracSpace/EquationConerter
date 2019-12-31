@@ -2,30 +2,49 @@
 Give an infix expression and convert to postfix and prefix. Plus, I want to add Three Address Code Generation
 
 # Demostration
+Sample: 
+
+---Don't add spaces or letters---
 Input infix equation: 
--> 7/6*4-2+1
+(4+5)*(4-5)/(4*5)+(4/5)
  
-- Polish Notation: 76/4*2-1+
-- Infix to Postfix: 76/4*2-1+
-- Infix to Prefix: /7*64+21 
+Polish Notation: 45+45-*45*/45/+
+Postfix: 45+45-*45*/45/+
+Prefix: *+45/-45*45/45
+Prefix to Infix: ((4+5)*((4-5)/(4*5)))
+Postfix to Infix: (+(/54)(/(*54)(*(-54)(+54))))
+TAC: 
 
-Operadores:
-Operador Ubicacion
-- '/'		'1'
-- '*'		'3'
-- '-'		'5'
-- '+'		'7'
+Operators: 
+Operator
+Array location
++		2
+*		5
+-		8
+/		11
+*		14
++		17
+/		20
 
-Operadores organizados:
-Operador	Ubicacion
-- '/'		'1'
-- '*'		'3'
-- '-'		'5'
-- '+'	 '7'
+Operators in order: 
+Operator	Array location
+*		5
+/		11
+*		14
+/		20
++		2
+-		8
++		17
 
-Código intermedio Triplos
+Three Address Code
 
-- t1 = 7/6
-- t2 = t1*4
-- t3 = t2-2
-- t4 = t3+1
+t1 = )*(
+t2 = )/(
+t3 = 4*5
+t4 = 4/5
+t5 = 4+5
+t6 = 4-5
+t7 = )+(
+ 
+Created by -> DiracSpace
+Github -> https://github.com/DiracSpace
