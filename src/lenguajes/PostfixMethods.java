@@ -29,6 +29,7 @@ public class PostfixMethods {
         return -1;
     }
     
+    // Infix to Postfix
     public String Postfix(String equation) {
         
         String result = "";
@@ -61,5 +62,38 @@ public class PostfixMethods {
             result += s.pop();
         }
         return result;
+    }
+    
+    private static boolean Check (char value) {
+        switch(value) {
+            case '+':
+            case '-':
+            case '/':
+            case '*':
+                return true;
+        }
+        return false;
+    }
+    
+    // Postfix to Infix
+    public String returnPostfixToInfix(String equation) {
+        
+        Stack<String> s = new Stack<>();
+        
+        for (int i = 0; i < equation.length(); i++) {
+            char value = equation.charAt(i);
+            if (Check(value)) {
+                String op1 = s.peek();
+                s.pop();
+                String op2 = s.peek();
+                s.pop();
+                String concatenation = "("+value+op1+op2+")";
+                
+                s.push(concatenation);
+            } else {
+                s.push(value + "");
+            }
+        }
+        return s.peek();
     }
 }

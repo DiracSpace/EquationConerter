@@ -28,7 +28,7 @@ public class PrefixMethods {
         return -1;
     }
     
-    public StringBuilder Prefijo(String equation) {
+    public StringBuilder Prefix(String equation) {
         
         StringBuilder result = new StringBuilder();
         StringBuilder input = new StringBuilder(equation);
@@ -70,5 +70,35 @@ public class PrefixMethods {
             result.append(s.pop());
         }
         return result.reverse();
+    }
+    
+    // boolean demostration of precedence checking
+    private static boolean Check (char value) {
+        switch(value) {
+            case '+':
+            case '-':
+            case '/':
+            case '*':
+                return true;
+        }
+        return false;
+    }
+    
+    public String returnPrefixToInfix(String equation) {
+        Stack<String> s = new Stack<>();
+        
+        for (int i = equation.length() - 1; i >= 0 ; i--) {
+            char value = equation.charAt(i);
+            if (Check(value)) {
+                String one = s.pop();
+                String two = s.pop();
+                String temp = "("+one+value+two+")";
+                s.push(temp);
+            } else {
+                s.push(value+"");
+            }
+        }
+        String result = s.pop();
+        return result;
     }
 }
