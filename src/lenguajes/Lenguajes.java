@@ -14,7 +14,7 @@ public class Lenguajes {
         String equation;
         
         // user input
-        System.out.println("---Don't add parenthesis or letters---");
+        System.out.println("---Don't add spaces or letters---");
         System.out.println("Input infix equation: ");
         equation = leer.next();
         
@@ -34,15 +34,23 @@ public class Lenguajes {
         TAC u = new TAC();
         PostfixMethods c = new PostfixMethods();
         PrefixMethods b = new PrefixMethods();
+        String prefix = b.Prefix(equation).toString();
+        String postfix = c.Postfix(equation);
         
         System.out.println(" ");
         
         // printing the results
         System.out.println("Polish Notation: " + queueToString(array));
-        System.out.println("Infix to Postfix: " + c.Postfix(equation));
-        System.out.println("Infix to Prefix: " + b.Prefijo(equation));
-        System.out.println("Código intermedio triplos: ");
+        System.out.println("Postfix: " + postfix); //this one works
+        System.out.println("Prefix: " + prefix);   // this one works
+        System.out.println("Prefix to Infix: " + b.returnPrefixToInfix(prefix));    //this one works
+        System.out.println("Postfix to Infix: " + c.returnPostfixToInfix(postfix)); // this one works
+        System.out.println("TAC: ");
         u.Mainprocess(equation);
+        
+        System.out.println(" ");
+        System.out.println("Created by -> DiracSpace");
+        System.out.println("Github -> https://github.com/DiracSpace");
     }
     
     // Turn queue to string for presentation
@@ -54,12 +62,6 @@ public class Lenguajes {
         queue.stream().forEach((item) -> {
             sb.append(item);
         });
-        
-        // one way of doing this
-        //queue.forEach((item) -> {
-            //sb.append(item);
-        //});
-        
         return sb.toString();
     }
 }

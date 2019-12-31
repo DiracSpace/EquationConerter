@@ -11,9 +11,9 @@ public class TAC {
     
     private static int importance(String value) {
         char token = value.charAt(0);
-        for (int i = 0; i < precedence.length; i++) {
-            if(token == precedence[i][0]) {
-                return Integer.parseInt(precedence[i][1]+"");
+        for (char[] precedence1 : precedence) {
+            if (token == precedence1[0]) {
+                return Integer.parseInt(precedence1[1] + "");
             }
         }
         return -1;
@@ -46,7 +46,7 @@ public class TAC {
             }
         }
         
-        System.out.println("\nOperadores:\nOperador\nUbicacion");
+        System.out.println("\nOperators: \nOperator\nArray location");
         
         for (i = 0; i < opc; i++) {
             System.out.println(operadores[i][0] + "\t\t" + operadores[i][1]);
@@ -65,13 +65,13 @@ public class TAC {
             }
         }
         
-        System.out.println("\nOperadores organizados:\nOperador\tUbicacion");
+        System.out.println("\nOperators in order: \nOperator\tArray location");
         
         for (i = 0; i < opc; i++) {
             System.out.println(operadores[i][0] + "\t\t" + operadores[i][1]);
         }
         
-        System.out.println("\nCódigo intermedio Triplos\n");
+        System.out.println("\nThree Address Code\n");
         
         for (i = 0; i < opc; i++) {
             j = Integer.parseInt(operadores[i][1] + "");
